@@ -1,10 +1,11 @@
-# Dmitri Manajev - Resume
+# Resume
 
 This repository contains my professional resume in LaTeX format, with automated compilation via GitHub Actions.
 
 ## Building the Resume
 
 ### Prerequisites
+
 - LaTeX distribution (TeX Live, MiKTeX, or MacTeX)
 - Make (usually pre-installed on Linux/macOS)
 
@@ -29,6 +30,7 @@ This will generate `Dmitri_Manajev_RL_Robotics_Resume_2025.pdf`.
 ## Automated Compilation
 
 The resume is automatically compiled via GitHub Actions when:
+
 - Changes are pushed to the `main` or `master` branch
 - A pull request is created
 - Manually triggered via workflow dispatch
@@ -38,4 +40,3 @@ The compiled PDF is available as an artifact in the GitHub Actions run.
 ## License
 
 MIT License - See the resume source file for details.
-
