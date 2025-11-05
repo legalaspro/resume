@@ -1,0 +1,22 @@
+# LaTeX auxiliary files
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+
+# Temporary PDF (before renaming)
+dmitri_manajev.pdf
+
+# OS files
+.DS_Store
+Thumbs.db
+
