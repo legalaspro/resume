@@ -13,8 +13,9 @@
 *.bcf
 *.run.xml
 
-# Temporary PDF (before renaming)
+# Generated PDFs
 dmitri_manajev.pdf
+Dmitri_Manajev_RL_Robotics_Resume_2025.pdf
 
 # OS files
 .DS_Store
