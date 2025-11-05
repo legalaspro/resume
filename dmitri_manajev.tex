@@ -17,6 +17,8 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 \input{glyphtounicode}
 
 \pagestyle{fancy}
@@ -94,12 +96,10 @@
 \newcommand{\resumeSubItem}[2]{\resumeItemPrj{#1}{#2}\vspace{-4pt}}
 
 % One-line cert/training item with right-aligned date/status
-\newcommand{\resumeCertItem}[2]{
-  \item\small{
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & \textit{#2} \\
-    \end{tabular*}\vspace{-6pt}
-  }
+\newcommand{\resumeCertItem}[2]{ 
+  \item\small{ 
+    \textbf{#1} \,--\, \textit{#2}\vspace{-6pt} 
+  } 
 }
 
 
@@ -152,19 +152,19 @@ spanning \textit{autonomous agents, planning/control, sim-to-real, and experimen
 \section{Projects}
   \resumeSubHeadingListStart
     
-  \resumeSubItem{\href{https://github.com/legalaspro/marl-ppo-suite}{MARL PPO Suite}}
-      {MAPPO/HAPPO for cooperative MARL (SMACv2); clean training/eval pipeline \\
+    \resumeSubItem{\href{https://github.com/legalaspro/marl-ppo-suite}{MARL PPO Suite}}
+      {MAPPO/HAPPO for cooperative MARL (SMACv2); clean training/eval pipeline.
       \textit{Proof:} \href{https://wandb.ai/legalaspro-rl/marl-ppo-suite/reports/MAPPO-vs-HAPPO-SMACv2-Benchmarks---VmlldzoxMjY1NjYwMg}{W\&B benchmarks}, \href{https://huggingface.co/models?other=marl-ppo-suite}{HF Model Zoo}.}
-    
+
     \resumeSubItem{\href{https://github.com/legalaspro/unity_multiagent_rl}{Unity Multi-Agent RL}}
-       {MAPPO/MASAC/MATD3/MADDPG with evaluation tooling; demonstrated performance on Unity Tennis/Soccer.}
-    
+      {MAPPO/MASAC/MATD3/MADDPG with evaluation tooling; demonstrated performance on Unity Tennis/Soccer.}
+
     \resumeSubItem{\href{https://github.com/legalaspro/maddpg-zoo-torch}{MADDPG Zoo (PyTorch)}}
       {Modern MADDPG for PettingZoo; reproducible baselines and evaluation scripts.}
-    
+
     \resumeSubItem{\href{https://github.com/legalaspro/rl-odyssey}{RL-Odyssey}}
       {Continuous-control RL (DDPG/TD3/SAC/PPO/TRPO/A2C/A3C) with notebooks \& scripts.}
-  
+
   \resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------------
@@ -188,7 +188,8 @@ spanning \textit{autonomous agents, planning/control, sim-to-real, and experimen
         \resumeItem{Shipped full-stack blockchain apps (Solidity/Node/Vue) and performed smart-contract reviews \& security testing.}
         \resumeItem{Developed MEV-aware transaction routing and automation; optimized node infrastructure for cost/latency.}
       \resumeItemListEnd
-
+  
+    % Swissmeda — Role 1
     \resumeSubheading
       {Swissmeda AG}{Zurich, CH}
       {Product \& IT Manager / Architect / DevOps}{2015 -- 2018}
@@ -198,8 +199,11 @@ spanning \textit{autonomous agents, planning/control, sim-to-real, and experimen
         \resumeItem{ Authored product specs/PRDs; aligned regulatory constraints; drove iOS \& backend releases.}
         \resumeItem{ Architected and shipped the \textbf{smop} iOS app for 3D implant plan review; improved release cadence \& reliability \href{https://apps.apple.com/us/app/smop/id971741467}{\textbf{App Store}}.}
       \resumeItemListEnd
-    
-    \resumeSubSubheading
+
+    % Swissmeda — Role 2 (separate entry)
+    % Some parsers have problem parsing 2 job roles for same company
+    \resumeSubheading
+      {Swissmeda AG}{Zurich, CH}
       {Senior iOS Engineer}{2014 -- 2015}
       \resumeItemListStart
         \resumeItem
@@ -236,7 +240,7 @@ spanning \textit{autonomous agents, planning/control, sim-to-real, and experimen
     \resumeSubheadingInfo
       {St. Petersburg State University(SPbSU)}{St. Petersburg, Russia}
       {Specialist / M.S. in Software Engineering \& Mathematics}{2007 -- 2012}
-      {Thesis: Collaborative recommendation system for tourist attractions.}
+      {\textbf{Thesis}: Collaborative recommendation system for tourist attractions.}
   \resumeSubHeadingListEnd
 
 
