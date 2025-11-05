@@ -4,47 +4,46 @@ on:
   push:
     branches: [ main, master ]
     paths:
-      - 'resume/dmitri_manajev.tex'
-      - 'resume/Makefile'
+      - 'dmitri_manajev.tex'
+      - 'Makefile'
       - '.github/workflows/compile-resume.yml'
   pull_request:
     branches: [ main, master ]
     paths:
-      - 'resume/dmitri_manajev.tex'
-      - 'resume/Makefile'
+      - 'dmitri_manajev.tex'
+      - 'Makefile'
       - '.github/workflows/compile-resume.yml'
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-      
+
     - name: Install LaTeX
       run: |
         sudo apt-get update
         sudo apt-get install -y texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
-    
+
     - name: Compile Resume
-      working-directory: ./resume
       run: make
-      
+
     - name: Upload PDF as artifact
       uses: actions/upload-artifact@v4
       with:
         name: Dmitri_Manajev_RL_Robotics_Resume_2025
-        path: resume/Dmitri_Manajev_RL_Robotics_Resume_2025.pdf
+        path: Dmitri_Manajev_RL_Robotics_Resume_2025.pdf
         if-no-files-found: error
         retention-days: 90
-    
+
     - name: Create Release (on tag)
       if: startsWith(github.ref, 'refs/tags/')
       uses: softprops/action-gh-release@v1
       with:
-        files: resume/Dmitri_Manajev_RL_Robotics_Resume_2025.pdf
+        files: Dmitri_Manajev_RL_Robotics_Resume_2025.pdf
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
