@@ -4,6 +4,11 @@
 % License : MIT
 %------------------------
 
+% VERSION CONTROL: Uncomment ONE of the following lines
+\newif\ifswissversion
+% \swissversiontrue   % Swiss version (shows permit)
+% \swissversionfalse  % International version (hides permit)
+
 \documentclass[letterpaper,11pt]{article}
 
 \usepackage{latexsym}
@@ -98,7 +103,7 @@
 % One-line cert/training item with right-aligned date/status
 \newcommand{\resumeCertItem}[2]{ 
   \item\small{ 
-    \textbf{#1} \,--\, \textit{#2}\vspace{-6pt} 
+    \textbf{#1} \textemdash\ \textit{#2}\vspace{-6pt} 
   } 
 }
 
@@ -123,6 +128,9 @@
   \textbf{\href{https://manajev.com/}{\Large Dmitri Manajev}} & Email: \href{mailto:dmitri@manajev.com}{dmitri@manajev.com}\\
   Zurich, Switzerland / Remote & Github: \href{https://github.com/legalaspro}{github.com/legalaspro} \\
   \href{https://manajev.com/}{manajev.com} & Linkedin: \href{https://linkedin.com/in/dmitri-manajev/}{linkedin.com/in/dmitri-manajev} \\
+  \ifswissversion
+  \multicolumn{2}{l}{\small \textbf{Swiss C permit (unlimited)} | Estonian }
+  \fi
 \end{tabular*}
 
 %-----------SUMMARY-----------------
@@ -250,7 +258,7 @@ spanning \textit{autonomous agents, planning/control, sim-to-real, and experimen
 \section{Certifications \& Training}
   \resumeSubHeadingListStart
     \resumeCertItem{\href{https://www.theconstruct.ai/robotics-developer/}{Robotics Developer (Masterclass), The Construct}}{In progress — Sep--Dec 2025}
-    \resumeCertItem{\href{https://www.theconstruct.ai/unitree-g1-humanoid-robotics-certificate-training/}{Humanoid Robotics Certificate (Barcelona), The Construct}}{Scheduled — Dec 10--12, 2025}
+    \resumeCertItem{\href{https://www.theconstruct.ai/unitree-g1-humanoid-robotics-certificate-training/}{Humanoid Robotics Certificate (Barcelona), The Construct}}{Dec 10--12, 2025}
     \resumeCertItem{\href{https://www.udacity.com/certificate/e/a3bacae8-bb66-11ed-826d-cbcb7e7fecc7}{Deep Reinforcement Learning (Nanodegree), Udacity}}{2025}
     \resumeCertItem{\href{https://www.udacity.com/certificate/e/6c29da6e-75b7-11ed-b96b-671d91689ee6}{Machine Learning with PyTorch (Nanodegree), Udacity}}{2023}
     \resumeCertItem{\href{https://www.udacity.com/certificate/e/9ff0fd60-75b6-11ed-984e-53126f988a5f}{Full Stack JavaScript Developer (Nanodegree), Udacity}}{2023}

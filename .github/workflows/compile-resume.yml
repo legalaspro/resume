@@ -31,14 +31,22 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
 
-      - name: Compile Resume
-        run: make
+      - name: Compile Resume (Both Versions)
+        run: make both
 
-      - name: Upload PDF as artifact
+      - name: Upload Swiss Version as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Dmitri_Manajev_RL_Robotics_Resume_2025
-          path: Dmitri_Manajev_RL_Robotics_Resume_2025.pdf
+          name: Dmitri_Manajev_RL_Robotics_Resume_2025_Swiss
+          path: Dmitri_Manajev_RL_Robotics_Resume_2025_Swiss.pdf
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Upload International Version as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Dmitri_Manajev_RL_Robotics_Resume_2025_International
+          path: Dmitri_Manajev_RL_Robotics_Resume_2025_International.pdf
           if-no-files-found: error
           retention-days: 90
 
@@ -46,6 +54,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v1
         with:
-          files: Dmitri_Manajev_RL_Robotics_Resume_2025.pdf
+          files: |
+            Dmitri_Manajev_RL_Robotics_Resume_2025_Swiss.pdf
+            Dmitri_Manajev_RL_Robotics_Resume_2025_International.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
