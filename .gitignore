@@ -1,4 +1,4 @@
-# LaTeX auxiliary files
+# LaTeX build artifacts
 *.aux
 *.log
 *.out
@@ -12,14 +12,20 @@
 *.blg
 *.bcf
 *.run.xml
+*.bak
 
-# Generated PDFs
-dmitri_manajev.pdf
-Dmitri_Manajev_RL_Robotics_Resume_2025.pdf
-Dmitri_Manajev_RL_Robotics_Resume_2025_Swiss.pdf
-Dmitri_Manajev_RL_Robotics_Resume_2025_International.pdf
+# Generated CV PDFs
+/dmitri_manajev.pdf
+/Dmitri_Manajev_*Resume*.pdf
 
-# OS files
+# Private application material and generated artifacts
+/private/
+
+# Legacy private cover-letter files at the repository root
+/cover_letter*.tex
+/cover_letter*.pdf
+/cover_letter_config.yaml
+
+# OS metadata
 .DS_Store
 Thumbs.db
-

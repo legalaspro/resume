@@ -5,12 +5,14 @@ on:
     branches: [main, master]
     paths:
       - "dmitri_manajev.tex"
+      - "photo.jpg"
       - "Makefile"
       - ".github/workflows/compile-resume.yml"
   pull_request:
     branches: [main, master]
     paths:
       - "dmitri_manajev.tex"
+      - "photo.jpg"
       - "Makefile"
       - ".github/workflows/compile-resume.yml"
   workflow_dispatch:
@@ -37,16 +39,16 @@ jobs:
       - name: Upload Swiss Version as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Dmitri_Manajev_RL_Robotics_Resume_2025_Swiss
-          path: Dmitri_Manajev_RL_Robotics_Resume_2025_Swiss.pdf
+          name: Dmitri_Manajev_Resume_Swiss
+          path: Dmitri_Manajev_Resume_Swiss.pdf
           if-no-files-found: error
           retention-days: 90
 
       - name: Upload International Version as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Dmitri_Manajev_RL_Robotics_Resume_2025_International
-          path: Dmitri_Manajev_RL_Robotics_Resume_2025_International.pdf
+          name: Dmitri_Manajev_Resume_International
+          path: Dmitri_Manajev_Resume_International.pdf
           if-no-files-found: error
           retention-days: 90
 
@@ -55,7 +57,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            Dmitri_Manajev_RL_Robotics_Resume_2025_Swiss.pdf
-            Dmitri_Manajev_RL_Robotics_Resume_2025_International.pdf
+            Dmitri_Manajev_Resume_Swiss.pdf
+            Dmitri_Manajev_Resume_International.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
